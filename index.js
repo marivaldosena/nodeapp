@@ -2,7 +2,10 @@ const express = require('express')
 const redis = require('redis')
 
 const app = express()
-const redisClient = redis.createClient()
+const redisClient = redis.createClient({
+  host: 'redis',
+  port: 6379
+})
 
 redisClient.set('visitas', 0)
 
