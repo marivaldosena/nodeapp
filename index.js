@@ -2,14 +2,14 @@ const express = require('express')
 const redis = require('redis')
 
 const app = express()
-const redis = redis.createClient()
+const redisClient = redis.createClient()
 
-redis.set('visitas', 0)
+redisClient.set('visitas', 0)
 
 app.get('/', (req, res) => {
-  redis.get('visitas', (err, visitas) => {
+  redisClient.get('visitas', (err, visitas) => {
     res.send(`Visitas: ${visitas}`)
-    redis.set('visitas', parseInt(visitas) + 1)
+    redisClient.set('visitas', parseInt(visitas) + 1)
   })
 })
 
