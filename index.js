@@ -3,7 +3,7 @@ const redis = require('redis')
 
 const app = express()
 const redisClient = redis.createClient({
-  host: 'redis' || process.env.REDIS_URL,
+  host: 'redis://redis:6379' || process.env.REDIS_URL,
   port: 6379
 })
 
