@@ -8,8 +8,7 @@ node_js:
 env:
   global:
     - DOCKER_COMPOSE_VERSION=1.24.0
-    - PORT=${PORT:8080}
-    - REDIS_URL = ${REDIS_URL:'redis'}
+    - PORT=80
 
 services:
   - docker
